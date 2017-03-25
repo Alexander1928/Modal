@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JS Alert Sample</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button onclick="showAlert()">Show Alert</button>
+        <button onclick="showConfirm()">Format disk</button>
+        <button onclick="showPrompt()">Type something</button>
+        
+    <div id="showConfirmResult"></div>
+    
+    <div id="ShowPromtResult"></div>
+        
+        <script>
+            function showAlert() {
+                alert("Это окно предупреждение");
+            }
+            
+            function showConfirm(){
+                var msgTxt;
+                if (confirm("Отформатировать системный диск") == true) {
+                    msgTxt = "Прощайте все данные";
+                    alert("Все данные будут удалены");
+                } else {
+                    msgTxt = "Жизнь продолжается";
+                }
+                
+               document.getElementById("showConfirmResult").innerHTML = msgTxt;
+            }
+            function showPrompt() {
+                var someTxt= prompt("Введите любой текст");
+                
+                if (someTxt != null) {
+                    document.getElementById("ShowPromtResult").innerHTML = "Вы написали:" + someTxt;
+                }
+                
+                
+            }
+            </script>
+    </body>
+</html>
